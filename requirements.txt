@@ -1,0 +1,33 @@
+# Azure ML
+azureml-core>=1.15.0
+azureml-dataprep
+azureml-mlflow
+azureml-widgets
+
+# Synapse
+azureml-synapse
+
+# test
+papermill
+black
+
+# basic
+pandas
+matplotlib
+graphviz
+scikit-learn
+jupyter
+
+# algos
+lightgbm
+
+# explain
+interpret
+interpret-community==0.16.*
+azureml-interpret==1.23.0
+raiwidgets
+
+# lime
+# dash
+# dash_cytoscape
+
