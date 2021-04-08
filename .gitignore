@@ -116,3 +116,5 @@ venv.bak/
 ### Azure ML ###
 *.amltmp
 .ipynb_aml_checkpoints
+download_explanation
+model.pkl
