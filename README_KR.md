@@ -60,7 +60,10 @@ Azure ML의 주요 기능을 데모/실습을 통해 파악하고, 배터리 수
     ![test-forecast-ui](./img/test-forecast-ui.jpg)
   - [SDK 이용하여 Forecast 예측하는 .ipynb](code/04-deploy-consume-model.ipynb): Azure ML CI에서 실행
   - (TBD) 위 로직을 이용하면 Synapse에서 Power BI로 함께 시각화 가능
-  - Power BI에서 직접 ML 모델 이용해 시각화하는 예제는 [Part 1](#part-1) 참고
+  - Power BI에서 직접 ML 모델 이용해 시각화하는 예제는 [Part 1](#part-1) 참고하여, [sample data](sample\testXy.csv)에 대해 진행
+    ![test-forecast-power-bi](./img/test-forecast-power-bi.jpg)
+
+    > TODO: sample data의 기간을 좀더 늘여보도록 함
 
 ## Part 3
 
