@@ -36,7 +36,7 @@ Azure ML의 주요 기능을 데모/실습을 통해 파악하고, 배터리 수
 배터리 데이터로 Forecasting 수행
 
 - 데이터 준비/가공
-  - 원 데이터 + 가공된 데이터: Blob에 public으로 [업로드](https://synapseaikorcenpublic.blob.core.windows.net/share/dataset_rw3/)
+  - 원 데이터 + 가공된 데이터: Blob에 public으로 업로드: [원 데이터](https://synapseaikorcenpublic.blob.core.windows.net/share/RW3.csv), [가공된 데이터](https://synapseaikorcenpublic.blob.core.windows.net/share/dataset_rw3/)
   - [가공 로직 .ipynb](code/01-transform-data-in-synapse.ipynb): Synapse에 import하여 실행
   - [Azure ML에 Dataset으로 등록 로직 .ipynb](code/02-register-aml-dataset.ipynb): Synapse에서 import하거나 Azure ML CI에서 실행
 
