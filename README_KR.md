@@ -70,6 +70,7 @@ Azure ML의 주요 기능을 데모/실습을 통해 파악하고, 배터리 수
 기타 주요 기능 확인/데모
 
 - [Automatic Featurization](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features#featurization)
+- Many Models approach: [Solution Accelerator](https://github.com/microsoft/solution-accelerator-many-models), [agl Energy case](https://customers.microsoft.com/en-us/story/844796-agl-energy-azure)
 - Designer
 - Pipeline
 - MLOps with Azure DevOps
