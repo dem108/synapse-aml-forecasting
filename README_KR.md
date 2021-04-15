@@ -35,6 +35,9 @@ Azure ML의 주요 기능을 데모/실습을 통해 파악하고, 배터리 수
 
 배터리 데이터로 Forecasting 수행
 
+- 데이터 원천: [NASA](https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/)
+  - [Download Randomized Battery Usage Data Set 2](https://ti.arc.nasa.gov/c/26/)
+
 - 데이터 준비/가공
   - 원 데이터 + 가공된 데이터: Blob에 public으로 업로드: [원 데이터](https://synapseaikorcenpublic.blob.core.windows.net/share/RW3.csv), 원데이터wasb: `wasbs://share@synapseaikorcenpublic.blob.core.windows.net/RW3.csv`, [가공된 데이터](https://synapseaikorcenpublic.blob.core.windows.net/share/dataset_rw3/)
   - [가공 로직 .ipynb](code/01-transform-data-in-synapse.ipynb): Synapse에 import하여 실행
@@ -42,17 +45,17 @@ Azure ML의 주요 기능을 데모/실습을 통해 파악하고, 배터리 수
 
 - 실험 수행 - 모델 생성
   - Automated ML / UI 활용
-  - D13_V2: 8 core / 56 GB RAM
+    - Frequency: Auto
+    - Forecast horizon: 30
+    - Forecast target lags: 비움 ([0])
+    - Target rolling window size: 비움 (0)
+  - D13_V2: 8 core / 56 GB RAM (데이터가 크면 메모리가 어느 정도 이상이어야 하며, 성능 요건에 따라 결정 필요)
 
 - 모델 평가
   - explanation 분석하는 부분에 시간 할애
 
 - 모델 패키지/배포
   - UI에서 수행 (참고: [일반 튜토리얼](https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-automated-ml-forecast))
-    - Frequency: Auto
-    - Forecast horizon: 30
-    - Forecast target lags: 비움 ([0])
-    - Target rolling window size: 비움 (0)
   - 참고: [SDK에서 수행](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-auto-train-forecast)
 
 - 모델 사용 ([SDK 참고](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb))
@@ -78,12 +81,34 @@ Azure ML의 주요 기능을 데모/실습을 통해 파악하고, 배터리 수
 - Explore [ML Notebooks GitHub repo](https://github.com/Azure/MachineLearningNotebooks)
 - Explore [Azure ML examples GitHub repo](https://github.com/Azure/azureml-examples)
 
-## Contribute
+## Resources
 
-TODO: Explain how other users and developers can contribute to make your code better.
+Azure ML 관련된 일반 리소스
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
+- [애저머신러닝 공식 온라인문서 (한글)](https://aka.ms/azpls/azureml-docs)
+- [애저머신러닝 자동화된 ML 개념 (한글)](https://aka.ms/azpls/azureml-docs-automl)
+- [애저머신러닝의 자동화된 ML 따라하기 실습 가이드 (한글)](https://aka.ms/azpls/azureml-learn-automl)
+- [애저머신러닝의 자동화된 ML 샘플 (Python)](https://aka.ms/azpls/azureml-automl-samples)
+- [페이스북 광화문 AI (한글)](https://www.facebook.com/groups/GwangAI)
+- [애저머신러닝 관련 유용한 자료 모음](https://aka.ms/azpls/awesome-azureml)
 
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+유튜브 동영상 및 자료 (한글/한석진)
+
+- [애저듣보잡 - MLOps 101 | ep0. 오프닝](https://www.youtube.com/watch?v=DeOEuDosH2s&list=PLDZRZwFT9Wku509LgbJviEcHxX4AYj3QP)
+  1. [인트로](doc\mlops101\MLOps101-202009 (0) Intro.pdf)
+  1. [MLOps가 뭐길래](doc\mlops101\MLOps101-202009 (1) MLOps가 뭐길래.pdf)
+  1. [ML 생애주기1 - 데이터 준비](doc\mlops101\MLOps101-202009 (2) ML 생애주기 1 - 데이터 준비.pdf)
+  1. [ML 생애주기2 - 실험 학습](doc\mlops101\MLOps101-202009 (3) ML 생애주기 2 - 실험 학습.pdf)
+  1. [ML 생애주기3 - 모델 해석](doc\mlops101\MLOps101-202009 (4) ML 생애주기 3 - 모델 해석.pdf)
+  1. [ML 생애주기4 - 배포 서빙](doc\mlops101\MLOps101-202009 (5) ML 생애주기 4 - 배포 서빙.pdf)
+  1. [MLOps in Action 엿보기](doc\mlops101\MLOps101-202009 (6) MLOps in Action 엿보기.pdf)
+  
+- [자동화된 ML, 나도 해보자! | ep0. 인트로 | 애저듣보잡](https://www.youtube.com/watch?v=qzAipYqyMQk&list=PLDZRZwFT9WksTnqh1hl0iygROuE7N7Qwf)
+  1. [인트로](doc\automl\AutoML-202011 (0) Intro.pdf)
+  1. [자동화된 ML이 왜 필요한가](doc\automl\AutoML-202011-(1)-자동화된 ML이 왜 필요한가.pdf)
+  1. [애저ML 처음 시작하기](doc\automl\AutoML-202011 (2) 애저ML 처음 시작하기.pdf)
+  1. [GUI로 자동화된 ML 직접 해보기](doc\automl\AutoML-202011 (3) GUI로  자동화된ML 직접 해보기.pdf)
+  1. [자동화된 ML 결과 해석하기](doc\automl\AutoML-202011 (4) 자동화된ML 결과 해석하기.pdf)
+  1. [자동화된 ML 모델 배포 활용하기](doc\automl\AutoML-202011 (5) 자동화된ML 모델 배포 활용하기.pdf)
+  1. [자동화된 ML 코드로 돌려보기](doc\automl\AutoML-202011-(6)-자동화된ML-코드로-돌려보기.pdf)
+  1. [참고자료](doc\automl\AutoML-202011-(7)-참고자료.pdf)
